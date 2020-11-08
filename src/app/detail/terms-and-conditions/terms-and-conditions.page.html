@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/view/folder/Dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Terms and Conditions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h4 style="color:black;font-family: Arial, Helvetica, sans-serif;">These terms must be accepted by you when you use City Flavours application 
+    Application:</h4>
+  <div *ngFor="let terms of termsList">
+    <h5 style="color: rgb(114, 112, 112);font-family: Arial, Helvetica, sans-serif"> {{terms.heading}}</h5>
+  
+    <p>
+      {{terms.content}}
+    </p>
+  </div>
+
+  <h4 style="color:black;font-family: Arial, Helvetica, sans-serif;">Refund and Cancellation policy:</h4>
+  <div *ngFor="let terms of refundList">
+  <h5 style="color: rgb(114, 112, 112);font-family: Arial, Helvetica, sans-serif"> {{terms.heading}}</h5>
+
+  <p>
+       {{terms.content}}
+  </p>
+  </div>
+
+</ion-content>

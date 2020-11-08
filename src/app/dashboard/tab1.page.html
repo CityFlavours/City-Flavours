@@ -1,0 +1,39 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar color="primary">
+    <ion-title>
+      Dashboard
+    </ion-title>
+  </ion-toolbar>
+  <ion-progress-bar type="indeterminate" *ngIf="showProgressBar > 0"></ion-progress-bar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-slides pager="true" [options]="slideOpts" style="margin-top: 3px;">
+    <ion-slide *ngFor="let slide of slides">
+      <div *ngIf="!slide.isImage">
+      <h2> {{ slide.heading }} </h2>
+      <p><b> {{ slide.body }} </b> </p>
+      </div>
+      <div *ngIf="slide.isImage">
+        <img class="slide-image" src="{{slide.imgSource}}">
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="ion-padding">
+    <ion-card  class="text-center ion-padding" color="danger" [routerLink]="['/menu/food']" >
+      <ion-icon name="fast-food" style="font-size: 1.5rem;"></ion-icon>
+      Order Food 
+    </ion-card>
+
+    <ion-card  class="text-center ion-padding" color="success" [routerLink]="['/menu/food/other/tiffin']" >
+      <ion-icon name="nutrition" style="font-size: 1.5rem;"></ion-icon>
+      Tiffin Service
+    </ion-card>
+
+    <ion-card  class="text-center ion-padding" color="secondary" [routerLink]="['/menu/food/other/catering']" >
+      <ion-icon name="nutrition" style="font-size: 1.5rem;"></ion-icon>
+      Party Catering
+    </ion-card>
+  </div>
+</ion-content>

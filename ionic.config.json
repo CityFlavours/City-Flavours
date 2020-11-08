@@ -1,0 +1,7 @@
+{
+  "name": "cf-customer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

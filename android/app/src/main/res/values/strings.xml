@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">cf-customer</string>
+    <string name="title_activity_main">cf-customer</string>
+    <string name="package_name">com.cityflavours.io</string>
+    <string name="custom_url_scheme">com.cityflavours.io</string>
+</resources>

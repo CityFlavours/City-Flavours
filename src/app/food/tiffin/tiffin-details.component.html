@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="danger">
+      <ion-title>
+        {{tiffin.name}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true" class="ion-padding tiffin"color="light">
+       <b> Details:</b>
+    <h5>
+        {{tiffin.details}}
+    </h5>
+    <br>
+    <b>Menu: </b>
+    <div [innerHTML]="tiffin.menu">
+    </div>
+    <br>
+    <b> Price: <span>Rs. {{ tiffin.price }}</span> </b>
+
+    <br>
+       <b>Place order and we will call you with details.</b> 
+
+  </ion-content>
+
+  <ion-footer class="ion-no-border" *ngIf="cartService.itemCount > 0" (click)="checkOut()" tappable >
+    <ion-toolbar color="success">
+        <ion-title>
+        <span color="success" style="float:right;border:none;">
+          Order Now
+          <ion-icon name="cart-outline"></ion-icon>
+        </span>
+        <br>
+        <small>From: {{tiffin.name }}</small>  
+     </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+  

@@ -1,0 +1,26 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" >
+    <ion-tab-button tab="food" [routerLink]="['/menu/food']">
+      <ion-icon name="fast-food-outline"></ion-icon>
+      <ion-label>Order Food</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="dashboard" [routerLink]="['/menu/dashboard']">
+      <ion-icon name="cube"></ion-icon>
+      <ion-label>Dashboard</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="orders" [routerLink]="['/menu/orders']">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>My Orders</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button [routerLink]="['/detail']">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>My Profile</ion-label>
+    </ion-tab-button>
+
+    
+  </ion-tab-bar>
+
+</ion-tabs>

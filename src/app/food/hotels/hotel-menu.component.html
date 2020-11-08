@@ -1,0 +1,105 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+  <ion-progress-bar type="indeterminate" *ngIf="showProgressBar" color="danger"></ion-progress-bar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ title }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div id="container" >
+    <div  *ngIf="menuData.length != 0">
+      <ion-item >
+        <ion-badge color="success" style="font-size: larger;margin: 0 auto">Veg Items</ion-badge>
+      </ion-item>
+    </div>
+    <ion-grid *ngFor=" let menu of subMenu;let i = index; " style="border-bottom:10px solid rgb(247, 243, 243);">
+      
+      
+      <h4> {{menu}}</h4>
+      <ion-row *ngFor="let item of menuData[menu]"  >
+        <ion-col size="1">
+          <img class="icon-veg-nonveg" src="../../../assets/icon/veg.png">
+        </ion-col>
+        <ion-col size="5">
+          <strong> {{item.name}} </strong>
+        </ion-col>
+        <ion-col class="center" size="2">
+          ₹ {{item.price}}
+        </ion-col>
+        <ion-col size="1">
+          <ion-badge color="success" *ngIf="item.count > 0">+{{ item.count }}</ion-badge>
+        </ion-col>
+        <ion-col size="3" class="center">
+          <span (click)="removeFromCart(item)">
+            <ion-icon name="remove-circle-outline" color="danger" size="large" style="margin-top: -5px;"></ion-icon>
+          </span>
+          <span (click)="addToCart(item)">
+            <ion-icon name="add-circle-outline" color="primary" size="large" style="margin-top: -5px;"></ion-icon>
+          </span>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+
+
+    <div  *ngIf="subMenuNonVeg.length != 0">
+      <ion-item >
+      <ion-badge color="danger" style="font-size: larger;margin: 0 auto">Non-veg Items</ion-badge>
+      </ion-item>
+    </div>
+    <ion-grid *ngFor=" let menu of subMenuNonVeg;let i = index; " style="border-bottom:10px solid rgb(247, 243, 243);">   
+      <h4> {{menu}}</h4>
+      <ion-row *ngFor="let item of menuDataNonVeg[menu]"  >
+        <ion-col size="1">
+          <img class="icon-veg-nonveg" src="../../../assets/icon/non-veg.png">
+        </ion-col>
+        <ion-col size="5">
+          <strong> {{item.name}} </strong>
+        </ion-col>
+        <ion-col class="center" size="2">
+          ₹ {{item.price}}
+        </ion-col>
+        <ion-col size="1">
+          <ion-badge color="success" *ngIf="item.count > 0">+{{ item.count }}</ion-badge>
+        </ion-col>
+        <ion-col size="3" class="center">
+          <span (click)="removeFromCart(item)">
+            <ion-icon name="remove-circle-outline" color="danger" size="large" style="margin-top: -5px;"></ion-icon>
+          </span>
+          <span (click)="addToCart(item)">
+            <ion-icon name="add-circle-outline" color="primary" size="large" style="margin-top: -5px;"></ion-icon>
+          </span>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  
+
+</ion-content>
+
+<ion-footer class="ion-no-border" *ngIf="cartService.itemCount > 0" (click)="checkOut()" tappable >
+  <ion-toolbar color="success">
+    <ion-title class="ion-text-left"><small>{{ cartService.itemCount }} Items  | Total :  ₹  {{ cartService. totalAmount}} </small>
+      <span color="success" style="float:right;border:none;">
+        Order Now
+        <ion-icon name="cart-outline"></ion-icon>
+      </span>
+      <br>
+      <small>From: {{title }}</small>  
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,12 @@
+
+<div id="container">
+  <div id="imageContainer">
+    
+      <img src="{{imageUrl}}">
+      <ion-button color="danger" class="ion-button-cross" style="float:right;" (click)="modelController.dismiss()" *ngIf="!isUpdate">X</ion-button>
+      <ion-button color="danger" class="ion-button-update" style="float:right;" *ngIf="isUpdate" (click)="update()">
+        Update Now</ion-button>
+    
+    </div>
+  
+</div>

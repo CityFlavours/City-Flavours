@@ -1,0 +1,51 @@
+<!-- Default Input -->
+<ion-content>
+  <div id="header">
+    <span> Enter details </span><br>
+    <span> And start ordering</span>
+  </div>
+  <form [formGroup]="detailsForm">
+    <ion-item class="ion-margin">
+      <ion-label position="floating">First name</ion-label>
+      <ion-input formControlName = "firstName"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="floating">Last name</ion-label>
+      <ion-input formControlName = "lastName"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top">
+      <ion-select value="brown" okText="Okay" cancelText="Dismiss" placeholder="Select city"
+        (ionChange)="onTownSelected($event)" >
+        <ion-select-option value="brown" *ngFor="let city of cities | async" [value]="city">{{city.text}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="floating">Address line 1</ion-label>
+      <ion-input formControlName = "address1"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-label position="floating">Address line 2 (optional)</ion-label>
+      <ion-input formControlName = "address2"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin">
+      <ion-checkbox color="secondary" formControlName = "checboxTermsAndConditions"></ion-checkbox>
+      <ion-label class="ion-margin-left">&nbsp;I agree to <a [routerLink]="['/detail/terms']">terms and conditions</a></ion-label>
+    </ion-item>
+  </form>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" size="medium" class="center ion-margin" (click)="submitDetails()" [disabled]="!detailsForm.valid">
+      <ion-icon slot="start" name="lock-open"></ion-icon>
+      Submit
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

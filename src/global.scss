@@ -1,0 +1,81 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
+
+.blue-background{
+    --background: #2193b0;  /* fallback for old browsers */
+    --background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+    --background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        font-family: 'Raleway', sans-serif;
+}
+
+.background-light{
+    --background: var(--ion-color-light)
+}
+.background-success{
+    --background: var(--ion-color-success) 
+}
+ion-content{
+    font-family: 'Raleway', sans-serif;
+}
+.center{
+    text-align: center;
+}
+.icon-veg-nonveg{
+    width: 20px;
+    height: 20px;;
+}
+.dark-blue{
+    --background: #0b82bb;
+    border-radius: 10%;
+}
+
+  ion-backdrop {         
+    --backdrop-opacity: 0.5;
+}
+.bg-success{
+
+    margin-top: 10px;
+    background-color: lawngreen;
+    color: rgb(105, 116, 109);
+    text-align: center;
+    font-size: larger;
+}
+.bg-danger{
+    margin-top: 10px;
+    background-color: rgb(231, 22, 22);
+    color: rgb(105, 116, 109);
+    text-align: center;
+    font-size: larger;
+}
+.tiffin{
+    background: url("assets/images/tiffin.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}

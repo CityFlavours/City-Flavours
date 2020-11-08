@@ -1,0 +1,40 @@
+<ion-header translucent >
+  <ion-toolbar color="danger">
+    <ion-title> <ion-icon   name="fast-food" color="light"></ion-icon> {{isTiffin ? "Tiffin List" : "Catering List"}}</ion-title>
+  </ion-toolbar>
+  <ion-progress-bar type="indeterminate" *ngIf="showProgressBar" color="danger"></ion-progress-bar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item *ngFor="let hotelInfo of listHotelData" >
+      <ion-avatar slot="start">
+        <img src="{{hotelInfo.imageUrl}}">
+      </ion-avatar>
+
+          <ion-label class="ion-padding">
+            
+            
+            <ion-grid class="ion-no-padding">
+              <ion-row>
+              <ion-col size="8">
+                <h2>{{hotelInfo.name}}</h2>
+                <h3><label> {{hotelInfo.cuisine}} </label></h3>
+              </ion-col>
+              <ion-col size="4">
+                <ion-button color="success" (click)="goToMenuPage(hotelInfo)">View</ion-button>
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+            <ion-grid class="ion-no-padding">
+              <ion-row>
+              <ion-col size="9">
+                <span ><ion-icon   name="star" color="warning"></ion-icon> {{hotelInfo.rating}}</span> 
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+            
+          </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

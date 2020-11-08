@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "439670374785",
+    "firebase_url": "https://city-flavours-76b3d.firebaseio.com",
+    "project_id": "city-flavours-76b3d",
+    "storage_bucket": "city-flavours-76b3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439670374785:android:9c01c92139931b792f2880",
+        "android_client_info": {
+          "package_name": "com.cityflavours.io"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439670374785-fdiev15jmv66v0jemt5915bge53tlgkf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlv_N2CG2GpB6F9Rndg49w57gh9RANpHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439670374785-fdiev15jmv66v0jemt5915bge53tlgkf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

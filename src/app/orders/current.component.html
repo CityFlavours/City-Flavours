@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="secondary">
+      <ion-title>
+        Current Orders
+      </ion-title>
+    </ion-toolbar>
+    <ion-progress-bar type="indeterminate" *ngIf="showProgressBar" color="secondary"></ion-progress-bar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" >
+      <ion-list>
+    <ion-item *ngFor="let order of orderList" color="light" class="ion-padding-vertical">
+        <ion-avatar slot="start">
+          <ion-icon name="cart" color="primary" style="font-size: 2.5rem;" class="ion-margin-right"></ion-icon>
+        </ion-avatar>
+        <ion-label>
+          <h2 style="color: rgb(28, 210, 235)">{{ order.hotelName }}</h2>
+          <h3 >{{ order.date | date: 'dd MMM yyyy     h:mm a' }}</h3>
+          <p *ngIf="order.status >=2" > Total price: {{ order.totalAmount}}</p>
+          <p >   <ion-badge color="success">{{OrderStatus[order.status]}}</ion-badge> </p> 
+          <p *ngIf="order.status >=2"  > By {{ order.assingedToName }}</p>
+          
+        </ion-label>
+        <span >
+          <ion-button size="small" color="primary" (click) ="goToOrderDetails(order)">View</ion-button>
+        </span>
+        <!-- <div>
+            <h3 class="ion-no-padding"> {{order.hotelName}} </h3>
+            <ion-label class="ion-no-padding"> {{order.date | date: 'dd MMM yyyy h:mm a'}} </ion-label>
+            <ion-label *ngIf="order.status >= 2" class="ion-no-padding"> {{order.totalAmount + 10 }} </ion-label>
+            <ion-label *ngIf="order.status == 1" class="ion-no-padding"> {{order.totalAmount  }} + <ion-badge color="secondary" >Delivery charges</ion-badge> </ion-label>
+            
+            
+        </div> -->
+        </ion-item>
+        </ion-list>
+
+        
+    
+  </ion-content>
+  
+  

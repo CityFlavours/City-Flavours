@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Orders
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+    <div class="ion-padding">
+      <ion-card class="text-center ion-padding" color="primary" [routerLink]="['/menu/orders/current-orders']">
+        <ion-icon name="cart" style="font-size: 1.5rem;"></ion-icon>
+        Current Order
+      </ion-card>
+         
+      <ion-card class="text-center ion-padding" color="success" [routerLink]="['/menu/orders/previous-orders']">
+        <ion-icon name="clock" style="font-size: 1.5rem;"></ion-icon>
+        Previous Order
+      </ion-card>
+    </div>
+</ion-content>

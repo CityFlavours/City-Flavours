@@ -1,0 +1,108 @@
+<ion-header translucent >
+  <ion-toolbar color="success">
+    <ion-title> <ion-icon   name="cart" color="light"></ion-icon>Order details</ion-title>
+  </ion-toolbar>
+  <ion-progress-bar type="indeterminate" *ngIf="showProgressBar" color="success"></ion-progress-bar>
+</ion-header>
+<ion-content fullscreen>
+<div class="invoice-box">
+  
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+        <td colspan="2" id="logo">
+                        <img  src="../../../assets/Images/checkout.png">
+              
+        </td>
+    </tr>
+    <tr class="heading">
+        <td>
+            Item
+        </td>
+        <td>
+            Price
+        </td>
+        <td>
+           Qt
+        </td>
+
+        <td style="font-weight: bold;">
+            Total
+         </td>
+    </tr>
+      <tr class="item" *ngFor="let item of cartService.getItemsWithCount()">
+          <td style="width: 40%;">
+            {{item.name}}
+          </td>
+          
+          <td>
+            ₹  {{item.price}}
+          </td>
+
+          <td>
+            {{item.quantity}}
+          </td>
+          <td >
+            ₹  {{item.price * item.quantity}}
+          </td>
+      </tr>
+      <tr class="last" style="font-weight: bold ;">
+        <td> Sub Total: </td>
+        <td></td>
+        <td ></td>
+        <td >
+          ₹   {{ totalCost }}
+        </td>
+        
+      </tr>
+  </table>
+<ion-grid id="wholeTotal">
+  <ion-row class="ion-text-left"  >
+    <ion-col size="4" style="color: rgb(230, 46, 46);">
+      TOTAL
+    </ion-col>
+    <ion-col size="8" class="ion-text-right">
+      ₹ {{totalCost }}
+       + <span style="color:cornflowerblue">Delivery charges</span>
+    </ion-col>
+  </ion-row>
+  
+</ion-grid>
+
+<table cellpadding="0" cellspacing="0">
+    
+    
+
+    
+    <tr class="heading">
+        <td>
+            Payment Method
+        </td>
+        
+        <td>
+            Cash on delivery
+        </td>
+    </tr>
+    
+    <tr class="details" style="color: rgb(157, 167, 162);">
+        <td colspan="2">
+            -> Delivery charges <span style="color:cornflowerblue">( Rs. 10/ Rs. 20/ Rs. 30)</span>
+            <br>
+            -> May change as per distance <br>
+            -> Delivery charges will be applied once order is accepted
+        </td>
+    </tr>
+    
+    
+</table>
+
+</div>
+
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" style="align-self: start;" slot="fixed" (click)="presentAddressModal()" >
+    <ion-fab-button>
+        Order<br> Now
+    </ion-fab-button>
+</ion-fab>
+
+

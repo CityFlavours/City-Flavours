@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>Select Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+
+<div id="container">
+<h3 class="ion-text-center ion-margin" style="margin-top:10%">Select Default Address </h3>
+<ion-card class="ion-margin-vertical" (click) ="enterAddressAndContinue(false)">
+  <ion-item>
+    <ion-icon name="location" slot="start"></ion-icon>
+    <ion-label>{{defaultAddress.address1}}</ion-label>
+    <ion-button fill="outline" slot="end">Select </ion-button>
+  </ion-item>
+
+  <ion-card-content>
+    <ion-label>{{defaultAddress.address2}}</ion-label>
+  </ion-card-content>
+</ion-card>
+<ion-badge color="success" style="font-size: larger;margin: 0 auto">OR</ion-badge>
+
+<h3 class="ion-text-center ">Enter a new one</h3>
+ 
+<form [formGroup]="addressForm">
+<ion-item class="ion-margin" >
+  <ion-label position="floating">Colony Name</ion-label>
+  <ion-input formControlName="address1"></ion-input>
+</ion-item>
+
+<ion-item class="ion-margin">
+  <ion-label position="floating">House No/Street Name</ion-label>
+  <ion-input formControlName="address2"></ion-input>
+</ion-item>
+
+<ion-button expand="full" size="medium" class="center ion-margin"  [disabled]="!addressForm.valid" (click)="enterAddressAndContinue(true)">
+  <ion-icon slot="start" name="lock-open"></ion-icon>
+  Submit
+</ion-button>
+</form>
+
+</div>
+
+</ion-content>

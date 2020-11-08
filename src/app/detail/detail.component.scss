@@ -1,0 +1,19 @@
+#header{  
+    padding: 5%;  
+    text-align: center;
+    height: 25vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url("../../assets/Images/food.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#header span{
+   
+    border-radius: 10%;
+    font-size: 25px;
+    margin-bottom: 16px;
+    letter-spacing:2px;
+    padding: 5px;
+    border-radius: 10%;
+    color: rgb(206, 197, 197);
+    background-color: rgba(0, 0, 0, 0.5);
+}

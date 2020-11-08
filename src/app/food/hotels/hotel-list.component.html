@@ -1,0 +1,34 @@
+<ion-header translucent >
+  <ion-toolbar color="danger">
+    <ion-title> <ion-icon   name="fast-food" color="light"></ion-icon> Hotel list</ion-title>
+  </ion-toolbar>
+  <ion-progress-bar type="indeterminate" *ngIf="showProgressBar" color="danger"></ion-progress-bar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item *ngFor="let hotelInfo of listHotelData" (click)="goToMenuPage(hotelInfo)">
+      <ion-avatar slot="start">
+        <img src="{{hotelInfo.imageUrl}}">
+      </ion-avatar>
+
+          <ion-label class="ion-padding">
+            <h2>{{hotelInfo.name}}</h2>
+            <h3><label> {{hotelInfo.cuisine}} </label></h3>
+             
+            <ion-grid class="ion-no-padding">
+              <ion-row>
+              <ion-col size="8">
+                <span ><ion-icon   name="star" color="warning"></ion-icon> {{hotelInfo.rating}}</span> 
+              </ion-col >
+              <ion-col size="4" >
+                <ion-badge color="success" *ngIf="hotelInfo.isOpen == 1">Open now</ion-badge>
+                <ion-badge  color="danger" *ngIf="hotelInfo.isOpen == 0">Closed now</ion-badge>
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+            
+          </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
